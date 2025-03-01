@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-yaml": "^6.1.2",
     "@tailwindcss/vite": "^4.0.9",
-    "@uiw/react-textarea-code-editor": "^3.1.0",
+    "@uiw/react-codemirror": "^4.23.9",
     "@xyflow/react": "^12.4.4",
     "js-yaml": "^4.1.0",
+    "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-resizable-panels": "^2.1.7",

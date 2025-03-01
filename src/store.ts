@@ -6,15 +6,21 @@ const yamlSchema = `
 nodes:
   - id: "1"
     position: { x: 100, y: 100 }
+    type: sourceNode
     data:
-        label: "Dimension: Category"
+        dataType: Dimension
+        name: Product
+        source: CSV
+        saveToDatabase: true
   - id: "2"
     position: { x: 100, y: 300 }
+    type: sourceNode
     data:
-        label: "Filter"
-edges:
-  - source: "1"
-    target: "2"
+        dataType: Fact
+        name: Sales
+        source: CSV
+        saveToDatabase: false
+edges: []
 `;
 
 interface FlowState {
@@ -32,7 +38,7 @@ const generateYaml = (nodes: Node[], edges: Edge[]): string => {
         nodes: nodes.map(n => ({
             id: n.id,
             type: n.type,
-            data: n.data, // Keep only essential fields
+            data: n.data,
         })),
         edges,
     });
