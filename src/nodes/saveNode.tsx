@@ -35,7 +35,6 @@ const SaveNode = ({ data, selected }: any) => {
                 <Info className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white" />
                 <span className="text-gray-300">{data.dataType}:</span>
                 <span className="font-semibold" style={{ color: typeColor }}>{data.name}</span>
-                <Maximize className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white" />
             </div>
 
             <Handle
