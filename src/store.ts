@@ -20,6 +20,14 @@ nodes:
         name: Sales
         source: CSV
         saveToDatabase: false
+  - id: "3"
+    position: { x: 300, y: 500 }
+    type: saveNode
+    data:
+        dataType: Fact
+        name: Sales
+        source: CSV
+        saveToDatabase: false
 edges: []
 `;
 

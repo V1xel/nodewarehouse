@@ -1,13 +1,13 @@
 ﻿import { Handle, Position, useNodeId, NodeToolbar } from "@xyflow/react";
 import { Maximize, Info, Settings } from "lucide-react"; // ✅ Import icons
 
-const SourceNode = ({ data, selected }: any) => {
+const SaveNode = ({ data, selected }: any) => {
     const nodeId = useNodeId();
 
     // ✅ Define colors for different data types
     const dataTypeColors: Record<string, string> = {
-        ["Dimension"]: "#FF9770", 
-        ["Fact"]: "#FF70A6" 
+        ["Dimension"]: "#FF9770",
+        ["Fact"]: "#FF70A6"
     };
 
     // ✅ Get the color for the current dataType, fallback to default
@@ -41,15 +41,13 @@ const SourceNode = ({ data, selected }: any) => {
                 <span className="text-gray-300">{data.dataType}:</span>
                 <span className="font-semibold" style={{ color: typeColor }}>{data.name}</span>
 
-                {/* Maximize Icon (Right Side) */}
                 <Maximize className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white" />
             </div>
 
-            {/* Source Handle (Right Side) */}
             <Handle
-                type="source"
-                position={Position.Right}
-                id="right"
+                type="target"
+                position={Position.Left}
+                id="left"
                 className="w-2"
                 style={{
                     borderRadius: "0px",
@@ -61,4 +59,4 @@ const SourceNode = ({ data, selected }: any) => {
     );
 };
 
-export default SourceNode;
+export default SaveNode;
