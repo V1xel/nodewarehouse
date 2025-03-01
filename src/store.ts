@@ -28,6 +28,14 @@ nodes:
         name: Sales
         source: CSV
         saveToDatabase: false
+  - id: "4"
+    position: { x: 500, y: 700 }
+    type: filterNode
+    data:
+        dataType: Fact
+        name: Sales
+        source: CSV
+        saveToDatabase: false
 edges: []
 `;
 

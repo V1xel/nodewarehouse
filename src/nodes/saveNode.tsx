@@ -31,16 +31,10 @@ const SaveNode = ({ data, selected }: any) => {
 
             {/* Node Content with Icons */}
             <div className="flex items-center gap-2 text-sm font-medium text-white">
-                {/* Configuration Icon (Replaces FolderOpen) */}
                 <Settings className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white" />
-
-                {/* Info Icon */}
                 <Info className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white" />
-
-                {/* Node Label - Uses `dataType` color */}
                 <span className="text-gray-300">{data.dataType}:</span>
                 <span className="font-semibold" style={{ color: typeColor }}>{data.name}</span>
-
                 <Maximize className="w-4 h-4 text-gray-300 cursor-pointer hover:text-white" />
             </div>
 

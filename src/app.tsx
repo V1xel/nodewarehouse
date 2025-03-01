@@ -1,12 +1,13 @@
-import { useCallback, useRef } from "react";
+import { useCallback } from "react";
 import { ReactFlow, NodeChange, applyNodeChanges, EdgeChange, applyEdgeChanges, Connection } from "@xyflow/react";
-import CodeMirror, {Decoration, ViewPlugin} from "@uiw/react-codemirror";
+import CodeMirror from "@uiw/react-codemirror";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import { useFlowStore } from "./store";
-import SourceNode from "./sourceNode.tsx";
 import {yaml} from "@codemirror/lang-yaml";
-import SaveNode from "./saveNode.tsx";
 import ColoredEdge from "./coloredEdge.tsx";
+import SourceNode from "./nodes/sourceNode.tsx";
+import SaveNode from "./nodes/saveNode.tsx";
+import FilterNode from "./nodes/filterNode.tsx";
 
 export default function App() {
     const { nodes, edges, setNodes, setEdges, schema, setSchema } = useFlowStore();
@@ -38,7 +39,7 @@ export default function App() {
                         edges={edges}
                         onNodesChange={onNodesChange}
                         onEdgesChange={onEdgesChange}
-                        nodeTypes={{sourceNode: SourceNode, saveNode: SaveNode}}
+                        nodeTypes={{sourceNode: SourceNode, saveNode: SaveNode, filterNode: FilterNode}}
                         edgeTypes={{custom:ColoredEdge}}
                         onConnect={onConnect} // ✅ Enables connecting nodes
                         colorMode="dark"
